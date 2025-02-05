@@ -1,7 +1,39 @@
-import React from "react"
+"use client";
+
+import React from "react";
+import { useSearchParams } from "next/navigation";
 
 const Page = () => {
-  return <div>Page of Problems</div>
-}
+  const searchParams = useSearchParams();
+  const encodedData = searchParams.get('dataAsString');
 
-export default Page
+  if (!encodedData) {
+    return <div>No data found.</div>;
+  }
+
+  try {
+    const decodedData = decodeURIComponent(encodedData);
+    const jsonData = JSON.parse(decodedData);
+
+    console.log("problems start ..........");
+    console.log(jsonData.c0);
+    console.log(jsonData.c2);
+    console.log("problems end ..........");
+
+
+
+    return (
+      <>
+        <h1>Welcome</h1>
+        <div dangerouslySetInnerHTML={{ __html: jsonData.c0 }} />
+        <hr />
+        <div dangerouslySetInnerHTML={{ __html: jsonData.c2 }} />
+      </>
+    );
+  } catch (error) {
+    console.error("Error:", error);
+    return <div>Error: Invalid data received.</div>;
+  }
+};
+
+export default Page;

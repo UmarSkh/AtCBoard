@@ -15,7 +15,8 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { redirect } from "next/navigation"
+import { revalidatePath } from "next/cache"
+import { useRouter } from "next/navigation"
 
 const formSchema = z.object({
   pid: z.coerce
@@ -24,6 +25,11 @@ const formSchema = z.object({
 })
 
 export function ACForm() {
+
+
+
+  const router = useRouter();
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -32,11 +38,13 @@ export function ACForm() {
   })
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
+
     const pid = values.pid
 
     const data = {
       id: pid,
     }
+
 
     const r = await fetch("http://localhost:3333/", {
       method: "POST",
@@ -50,6 +58,15 @@ export function ACForm() {
     console.log("Next start........")
     console.log(res)
     console.log("Next end........")
+
+    const resString = JSON.stringify(res);
+
+    // console.log(resString)
+
+    const encodedResString = encodeURIComponent(resString)
+
+
+    router.push(`/problems?dataAsString=${encodedResString}`);
 
   }
 
@@ -74,4 +91,6 @@ export function ACForm() {
       </form>
     </Form>
   )
+
+
 }
