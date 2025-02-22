@@ -15,7 +15,7 @@ import {
   FormMessage,
 } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
-import { revalidatePath } from "next/cache"
+// import { revalidatePath } from "next/cache"
 import { useRouter } from "next/navigation"
 
 const formSchema = z.object({
@@ -28,7 +28,7 @@ export function ACForm() {
 
 
 
-  const router = useRouter();
+  // const router = useRouter();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -59,14 +59,16 @@ export function ACForm() {
     console.log(res)
     console.log("Next end........")
 
-    const resString = JSON.stringify(res);
+    // const resString = JSON.stringify(res);
 
     // console.log(resString)
 
-    const encodedResString = encodeURIComponent(resString)
+    // const encodedResString = encodeURIComponent(resString)
 
 
-    router.push(`/problems?dataAsString=${encodedResString}`);
+    // router.push(`/problems?dataAsString=${encodedResString}`);
+
+
 
   }
 
