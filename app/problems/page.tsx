@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 
 // import React from "react";
 // import { useSearchParams } from "next/navigation";
@@ -41,6 +41,7 @@
 import React from 'react'
 
 const Problmes = () => {
+
   return (
     <div>Problmes</div>
   )

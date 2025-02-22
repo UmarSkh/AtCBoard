@@ -1,0 +1,3 @@
+Hello!
+
+The useRouter from next/router is changed to next/navigation. It does not accept pathname and query parameters, rather it accepts a url string directly.

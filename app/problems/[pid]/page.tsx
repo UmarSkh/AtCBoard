@@ -1,14 +1,21 @@
 "use client"
 
-import React from "react"
-import { useParams } from "next/navigation"
+import React, { useEffect, useState } from "react"
+import { useSearchParams } from "next/navigation"
 
 const Page = () => {
-  const params = useParams()
+  const searchParams = useSearchParams(); 
+  const [data, setData] = useState("");
 
-  const pid = params.pid
+  useEffect(() => {
+    const dataParam = searchParams.get("data");
+    if(dataParam){
+      const decodedData = decodeURIComponent(dataParam);
+      setData(decodedData);
+    }
+  }, [searchParams])
 
-  return <div>Hello {pid}</div>
+  return <div>Problems: {data}</div>
 }
 
 export default Page
