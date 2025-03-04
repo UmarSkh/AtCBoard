@@ -1,3 +1,4 @@
+"use client"
 import * as React from "react"
 import { ACForm } from "@/components/custom/ac-form"
 import { Title } from "@/components/custom/title"

@@ -27,7 +27,6 @@ export function ACForm() {
 
   const router = useRouter();
 
-
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -38,52 +37,34 @@ export function ACForm() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
 
 
-    const pid = values.pid
 
-    const data = {
-      id: pid,
-    }
+    const pid = values.pid;
 
 
-    const r = await fetch("http://localhost:3333/", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(data),
-    })
-
-    const res = await r.json()
-    console.log("Next start........")
-    console.log(res)
-    console.log("Next end........")
-
-    const dataAsString = JSON.stringify(res);
-    const encodedData = encodeURIComponent(dataAsString);
-    router.push(`/problems/${res.id}?data=${encodedData}`);
+    router.push(`/problems/${pid}`);
 
   }
 
   return (
-    <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-        <FormField
-          control={form.control}
-          name="pid"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Problem ID</FormLabel>
-              <FormControl>
-                <Input placeholder="Enter Problem ID" {...field} />
-              </FormControl>
-              <FormDescription>This is your Problem ID.</FormDescription>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
-        <Button type="submit">Submit</Button>
-      </form>
-    </Form>
+      <Form {...form}>
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+          <FormField
+            control={form.control}
+            name="pid"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Problem ID</FormLabel>
+                <FormControl>
+                  <Input placeholder="Enter Problem ID" {...field} />
+                </FormControl>
+                <FormDescription>This is your Problem ID.</FormDescription>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <Button type="submit">Submit</Button>
+        </form>
+      </Form>
   )
 
 

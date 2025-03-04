@@ -1,14 +1,9 @@
-// const express = require('express')
 import express from "express"
 import bodyParser from "body-parser"
 import cors from "cors"
-// import axios from 'axios';
-// import { read } from "files";
-// import fetch from 'node-fetch';
-// import { HttpsProxyAgent } from 'https-proxy-agent';
-// import * as https from 'https';
 
-// import * as cheerio from 'cheerio';
+import puppeteer from "puppeteer";
+import * as cheerio from 'cheerio';
 
 const app = express()
 const port = 3333
@@ -22,100 +17,46 @@ app.get('/', (req, res) => {
     res.send('Getting on server!')
 })
 
+app.post('/', async (req, res) => {
 
-// app.post('/', async (req, res) => {
-
-
-
-//     // const dd = {
-//     //     newId: id*100,
-//     // }
-
-//     const data = {
-//         c0: String,
-//         c2: String
-//     }
-
-//     // const getHtml = async () => {
-//     //     const res = await fetch('https://atcoder.jp/contests/abc123/tasks/abc123_a');
-//     //     if(res.ok){
-//     //         const data = await res.text();
-//     //         console.log(await write("app/backend/data/cc.html", data).then(read));
-//     //         // console.log(data);
-//     //     }
-//     // }
-
-//     // getHtml();
-
-//     const html = await read("app/backend/data/cc.html");
-
-//     // console.log(html);
-
-//     const $ = cheerio.load(html);
-
-//     // console.log($('.h2').text());
-//     // await write("app/backend/data/title.txt", $("span[class=h2]").text());
-//     // await write("app/backend/data/content_0.txt", $("span[class=lang-en] .part section").eq(0).html());
-//     // await write("app/backend/data/content_1.txt", $("span[class=lang-en] .part section").eq(1).html());
-//     // await write("app/backend/data/content_2.txt", $("span[class=lang-en] .part section").eq(2).html());
-//     // await write("app/backend/data/content_3.txt", $("span[class=lang-en] .part section").eq(3).html());
-//     // await write("app/backend/data/content_4.txt", $("span[class=lang-en] .part section").eq(4).html());
-//     // await write("app/backend/data/content_5.txt", $("span[class=lang-en] .part section").eq(5).html());
-//     // await write("app/backend/data/content_6.txt", $("span[class=lang-en] .part section").eq(6).html());
-//     // console.log(html);
-
-//     const sections = $("span[class=lang-en] .part section");
-
-//     // for (let i = 0; i < sections.length; i++) {
-//     // const section = sections.eq(i);
-//     // const sectionHtmlText = section.text();
-//     //     // await write("app/backend/data/content_"+i+".html", sectionHtml);
-//     //     data.htmls.push(sectionHtmlText);
-//     // }
-
-//     data.c0 = sections.eq(0).html()
-//     data.c2 = sections.eq(2).html()
-
-
-
-//     // console.log(data);
-
-//     console.log(".")
-//     console.log(".")
-//     console.log(".")
-//     console.log(".")
-//     console.log("Server start........");  
-
-//     console.log(data.c0);
-//     console.log(data.c2);
-
-//     console.log("Server end........");
-//     console.log(".")
-//     console.log(".")
-//     console.log(".")
-//     console.log(".")
-
-//     res.send(data)
-
-// })
-
-app.post('/', (req, res) => {
     const receivedData = req.body;
     const receivedID = receivedData.id;
 
-    const newID = receivedID*100;
+    const problemUrl = "https://atcoder.jp/contests/abc"+ receivedID +"/tasks/abc"+ receivedID +"_c";
 
-
-    const newData = {
-        id: newID
+    const data = {
+        "htmls": []
     }
 
-    console.log(receivedID);
-
-
-    res.send(newData);
-
-
+    async function getDynamicHTML(url) {
+      const browser = await puppeteer.launch();
+      const page = await browser.newPage();
+      await page.goto(url, { waitUntil: 'networkidle2' });
+      const html = await page.content();
+      await browser.close();
+      return html;
+    }
+    
+    await getDynamicHTML("https://atcoder.jp/contests/abc123/tasks/abc123_c").then(async (html) => {
+        try {
+            const $ = cheerio.load(html);
+    
+            // $('.katex-mathml').remove();
+            $('.katex-html').remove();
+    
+            const sections = $("span[class=lang-en] .part section");
+        
+            for(let i=0;i<sections.length;i++){
+                data.htmls.push(sections.eq(i).html());
+            }
+    
+            res.send(data);
+    
+        } catch (error) {
+            console.error("Error processing HTML:", error);
+            res.status(500).send({ error: "Internal server error" });
+        }
+    });
 
 });
 
