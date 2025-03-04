@@ -19,10 +19,23 @@ app.get('/', (req, res) => {
 
 app.post('/', async (req, res) => {
 
-    const receivedData = req.body;
-    const receivedID = receivedData.id;
+    let receivedData = req.body;
+    let ctype = receivedData.ctype;
+    let cid = receivedData.cid;
+    let ctask = receivedData.ctask;
 
-    const problemUrl = "https://atcoder.jp/contests/abc"+ receivedID +"/tasks/abc"+ receivedID +"_c";
+    if(cid.length === 1){
+        cid = "00" + cid;
+    }
+    if(cid.length === 2){
+        cid = "0" + cid;
+    }
+
+    const problemUrl = "https://atcoder.jp/contests/"+ ctype + cid +"/tasks/"+ ctype + cid +"_" + ctask;
+
+    console.log(problemUrl);
+
+
 
     const data = {
         "htmls": []
@@ -37,7 +50,7 @@ app.post('/', async (req, res) => {
       return html;
     }
     
-    await getDynamicHTML("https://atcoder.jp/contests/abc123/tasks/abc123_c").then(async (html) => {
+    await getDynamicHTML(problemUrl).then(async (html) => {
         try {
             const $ = cheerio.load(html);
     

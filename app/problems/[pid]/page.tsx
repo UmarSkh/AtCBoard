@@ -1,9 +1,10 @@
 "use client";
 
 import React, {useState} from "react";
-import { useParams } from "next/navigation";
+// import { useParams } from "next/navigation";
 import parse from 'html-react-parser';
 import dynamic from "next/dynamic";
+import { useSearchParams } from 'next/navigation';
 
 const ExcalidrawWrapper = dynamic(
   async () => (await import("@/components/custom/excali")).default,
@@ -16,15 +17,26 @@ const ExcalidrawWrapper = dynamic(
 const Page = () => {
 
 
-  const {pid} = useParams();
 
 
-  let [data, setData] = useState(parse('<h1>single</h1>'));
 
+  let [data, setData] = useState(parse('<h1>Please Wait ...</h1>'));
+
+  const searchParams = useSearchParams();
+
+  const ctype = searchParams.get("ctype");
+  const cid = searchParams.get("cid");
+  const ctask = searchParams.get("ctask");
 
   const dataToSend = {
-    id: pid,
+    "ctype": ctype,
+    "cid": cid,
+    "ctask": ctask,
   }
+
+  // console.log("hi");
+  // console.log(dataToSend);
+  // console.log("hi");
 
   async function fetchData() {
 
@@ -49,7 +61,16 @@ const Page = () => {
 
     yourHtmlString = yourHtmlString.replace(/Copy/g, '');
 
-    setData(parse(yourHtmlString));
+    console.log("pid");
+    console.log(yourHtmlString);
+    console.log("pid");
+
+    if(yourHtmlString.length === 0){
+      setData("No Problem with given options");
+    }
+    else{
+      setData(parse(yourHtmlString));
+    }
 
   }
 
