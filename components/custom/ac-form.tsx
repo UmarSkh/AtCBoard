@@ -97,7 +97,7 @@ import { useRouter } from "next/navigation";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const formSchema = z.object({
-  ctype: z.enum(["abc", "arc", "ahc"], {
+  ctype: z.enum(["abc", "arc", "agc"], {
     errorMap: () => ({ message: "Please select a valid Contest Type" }),
   }),
   cid: z.coerce
@@ -158,7 +158,7 @@ export function ACForm() {
                 <SelectContent>
                   <SelectItem value="abc">AtCoder Beginner Contest</SelectItem>
                   <SelectItem value="arc">AtCoder Regular Contest</SelectItem>
-                  <SelectItem value="ahc">AtCoder Heuristic Contest</SelectItem>
+                  <SelectItem value="agc">AtCoder Grand Contest</SelectItem>
                 </SelectContent>
               </Select>
               <FormMessage />
