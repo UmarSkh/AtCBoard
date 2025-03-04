@@ -12,8 +12,8 @@ const ExcalidrawWrapper = dynamic(
 export default function Page() {
   return(
   <>
-    <h1 className="text-center text-3xl py-4">Excalidraw Example</h1>
-    <div style={ {height: "500px", border: "3px solid red"} }>
+    <h1 className="text-center text-2xl py-4">Sketch Your Code.</h1>
+    <div style={ {height: "500px"} }>
       <ExcalidrawWrapper />
     </div>
   </>
