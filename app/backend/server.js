@@ -156,8 +156,10 @@ app.post('/', async (req, res) => {
     //   await browser.close();
     //   return html;
 
+
         const res = await fetch(url);
         const html = res.text();
+        console.log(html);
         return html;
     }
     
