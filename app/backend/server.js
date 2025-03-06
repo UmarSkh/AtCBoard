@@ -146,37 +146,41 @@ app.post('/', async (req, res) => {
         "htmls": ["<h1>test for deployment</h1>"]
     }
 
-    res.send(data);
+    // res.send(data);
 
-    // async function getDynamicHTML(url) {
+    async function getDynamicHTML(url) {
     //   const browser = await puppeteer.launch();
     //   const page = await browser.newPage();
     //   await page.goto(url, { waitUntil: 'networkidle2' });
     //   const html = await page.content();
     //   await browser.close();
     //   return html;
-    // }
+
+        const res = await fetch(url);
+        const html = res.text();
+        return html;
+    }
     
-    // await getDynamicHTML(problemUrl).then(async (html) => {
-    //     try {
-    //         const $ = cheerio.load(html);
+    await getDynamicHTML(problemUrl).then(async (html) => {
+        try {
+            const $ = cheerio.load(html);
     
-    //         // $('.katex-mathml').remove();
-    //         $('.katex-html').remove();
+            // $('.katex-mathml').remove();
+            $('.katex-html').remove();
     
-    //         const sections = $("span[class=lang-en] .part section");
+            const sections = $("span[class=lang-en] .part section");
         
-    //         for(let i=0;i<sections.length;i++){
-    //             data.htmls.push(sections.eq(i).html());
-    //         }
+            for(let i=0;i<sections.length;i++){
+                data.htmls.push(sections.eq(i).html());
+            }
     
-    //         res.send(data);
+            res.send(data);
     
-    //     } catch (error) {
-    //         console.error("Error processing HTML:", error);
-    //         res.status(500).send({ error: "Internal server error" });
-    //     }
-    // });
+        } catch (error) {
+            console.error("Error processing HTML:", error);
+            res.status(500).send({ error: "Internal server error" });
+        }
+    });
 
 });
 
