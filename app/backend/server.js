@@ -101,6 +101,7 @@ import bodyParser from "body-parser"
 import cors from "cors"
 
 import puppeteer from "puppeteer";
+import chromium from "chrome-aws-labda"
 import * as cheerio from 'cheerio';
 
 const app = express()
@@ -149,6 +150,7 @@ app.post('/', async (req, res) => {
     // res.send(data);
 
     async function getDynamicHTML(url) {
+
     //   const browser = await puppeteer.launch();
     //   const page = await browser.newPage();
     //   await page.goto(url, { waitUntil: 'networkidle2' });
@@ -157,10 +159,35 @@ app.post('/', async (req, res) => {
     //   return html;
 
 
-        const res = await fetch(url);
-        const html = res.text();
-        console.log(html);
-        return html;
+        // const res = await fetch(url);
+        // const html = res.text();
+        // console.log(html);
+        // return html;
+
+        
+        let browser = null;
+        try {
+            browser = await puppeteer.launch({
+            args: chromium.args,
+            executablePath: await chromium.executablePath,
+            headless: chromium.headless,
+            ignoreDefaultArgs: ['--disable-extensions'],
+            });
+
+            const page = await browser.newPage();
+            await page.goto(url, { waitUntil: 'networkidle2' });
+            const html = await page.content();
+
+            return html;
+        } catch (error) {
+            console.error('Puppeteer Error:', error);
+        } finally {
+            if (browser) {
+            await browser.close();
+            }
+        }
+
+
     }
     
     await getDynamicHTML(problemUrl).then(async (html) => {

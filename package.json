@@ -20,6 +20,7 @@
     "better-react-mathjax": "^2.1.0",
     "body-parser": "^1.20.3",
     "cheerio": "^1.0.0",
+    "chrome-aws-lambda": "^10.1.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cors": "^2.8.5",
