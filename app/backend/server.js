@@ -101,7 +101,7 @@ import bodyParser from "body-parser"
 import cors from "cors"
 
 import puppeteer from "puppeteer";
-import chromium from "chrome-aws-labda"
+import chromium from "chrome-aws-lambda"
 import * as cheerio from 'cheerio';
 
 const app = express()
