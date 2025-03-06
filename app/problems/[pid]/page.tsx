@@ -33,7 +33,7 @@ const Page = () => {
 
   const fetchData = useCallback(async () => {
     try {
-      const r = await fetch("http://localhost:3333/", {
+      const r = await fetch("https://atcb-backend.onrender.com/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
