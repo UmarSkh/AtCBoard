@@ -3,6 +3,9 @@
 
 A web app for online whiteboarding for AtCoder Questions.
 
+## Get the Web App !
+
+Get the deployed version of the app at https://atcb.vercel.app/
 
 ## API Reference
 
@@ -27,25 +30,34 @@ A web app for online whiteboarding for AtCoder Questions.
 ## Demo
 ![Demo Video](assets/Videos/AtCBoard-Demo.mp4)
 
+## Tech Stack
 
-## Authors
+**Frontend:**
 
-- [@UmarSkh](https://github.com/UmarSkh)
+* Next.js
+* TypeScript
+* Tailwind CSS
+* Shadcn UI
+* Excalidraw (`@excalidraw/excalidraw`)
 
+**Backend**
 
+* Node.js
+* Express.js
+* Puppeteer
+* Cheerio
+* CORS (`cors`)
+* Body-parser (`body-parser`)
 
-## Contributing
+**Deployment**
 
-Contributions are always welcome! Feel free to fork the repository and make a pull request.
+* Render
 
-### How to Contribute
-- Fork the repository.
-- Create a new branch (```git checkout -b feature-branch```).
-- Make your changes.
-- Commit your changes (```git commit -m 'Add new feature'```).
-- Push to the branch (```git push origin feature-branch```).
-- Open a pull request.
+**Other:**
 
+* npm
+* Zod
+* React Hook Form
 
 ## Features
 
@@ -55,21 +67,7 @@ Contributions are always welcome! Feel free to fork the repository and make a pu
 - Interactive Whiteboard
 - Many more to come ...
 
-
-## Feedback
-
-If you have any feedback, please reach out to us.
-
-
-## Get the Web App !
-
-Get the deployed version of the app at https://atcb.vercel.app/
-## Lessons Learned
-
-This project was a rapid learning curve. I mastered Next.js fundamentals, web scraping techniques, and deployment workflows. Robust debugging and server management became essential skills. Tailwind CSS and TypeScript solidified my frontend capabilities, improving both efficiency and design. Future exploration of Firebase and authentication will expand upon this now solid foundation.
-
-
-## Run Locally
+- ## Run Locally
 
 Clone the project
 
@@ -95,32 +93,26 @@ Start the server
   npm run dev
 ```
 
-[Watch the video](videos/my_video.mp4)
-## Tech Stack
+## Authors
 
-**Frontend:**
+- [@UmarSkh](https://github.com/UmarSkh)
 
-* Next.js
-* TypeScript
-* Tailwind CSS
-* Shadcn UI
-* Excalidraw (`@excalidraw/excalidraw`)
+## Contributing
 
-**Backend:**
+Contributions are always welcome! Feel free to fork the repository and make a pull request.
 
-* Node.js
-* Express.js
-* Puppeteer
-* Cheerio
-* CORS (`cors`)
-* Body-parser (`body-parser`)
+### How to Contribute
+- Fork the repository.
+- Create a new branch (```git checkout -b feature-branch```).
+- Make your changes.
+- Commit your changes (```git commit -m 'Add new feature'```).
+- Push to the branch (```git push origin feature-branch```).
+- Open a pull request.
 
-**Deployment:**
+## Lessons Learned
 
-* Render
+This project was a rapid learning curve. I mastered Next.js fundamentals, web scraping techniques, and deployment workflows. Robust debugging and server management became essential skills. Tailwind CSS and TypeScript solidified my front-end capabilities, improving both efficiency and design. Future exploration of Firebase and authentication will expand upon this now-solid foundation.
 
-**Other:**
+## Feedback
 
-* npm
-* Zod
-* React Hook Form
+If you have any feedback, please let us know.
