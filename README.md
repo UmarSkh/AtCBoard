@@ -64,7 +64,7 @@ Get the deployed version of the app at https://atcb.vercel.app/
 - Interactive Whiteboard
 - Many more to come ...
 
-- ## Run Locally
+## Run Locally
 
 Clone the project
 
