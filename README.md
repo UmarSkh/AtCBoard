@@ -19,13 +19,13 @@ A web app for online whiteboarding for AtCoder Questions.
 ```
 
 ## Screenshots
-![Homepage](assets\Screenshots\Homepage.png)
-![Whiteboard](assets\Screenshots\Whiteboard.png)
-![Fetching](assets\Screenshots\Fetching.png)
-![Content](assets\Screenshots\Content.png)
+![Homepage](assets/Screenshots/Homepage.png)
+![Whiteboard](assets/Screenshots/Whiteboard.png)
+![Fetching](assets/Screenshots/Fetching.png)
+![Content](assets/Screenshots/Content.png)
 
 ## Demo
-![Screenshot of the form](assets\Videos\AtCBoard-Demo.mp4)
+![Demo Video](assets/Videos/AtCBoard-Demo.mp4)
 
 
 ## Authors
