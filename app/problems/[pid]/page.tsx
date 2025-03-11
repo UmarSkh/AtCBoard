@@ -15,7 +15,7 @@ const ExcalidrawWrapper = dynamic(
 
 const Page = () => {
 
-  let [data, setData] = useState(parse('<h1>Please Wait ...</h1>'));
+  let [data, setData] = useState(parse('<h1>Please wait for backend to deliver content ... </h1><p>(This may take upto 1 minute)</p>'));
 
   const searchParams = useSearchParams();
 
@@ -108,7 +108,7 @@ const Page = () => {
         };
     }, []);
 
-    
+
   return (
     <div className="z-40 w-screen h-screen">
         <div className="fixed flex mt-0 h-[calc(100vh-4rem)] w-screen">
