@@ -5,7 +5,7 @@ import { Title } from "@/components/custom/title"
 
 export default function Home() {
   return (
-    <div className="bg-blue-50 relative flex min-h-screen flex-col justify-center overflow-hidden py-6 sm:py-12">
+    <div className="relative flex min-h-screen flex-col justify-center overflow-hidden py-6 sm:py-12">
       <div>
         <Title></Title>
       </div>
