@@ -1,36 +1,118 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# AtCoder Board
 
-First, run the development server:
+A web app for online whiteboarding for AtCoder Questions.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+## API Reference
+
+#### Home Page
+
+```
+  /
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### Whiteboard
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+  /board
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## Authors
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- [@UmarSkh](https://github.com/UmarSkh)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Contributing
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Contributions are always welcome! Feel free to fork the repository and make a pull request.
+
+### How to Contribute
+- Fork the repository.
+- Create a new branch (```git checkout -b feature-branch```).
+- Make your changes.
+- Commit your changes (```git commit -m 'Add new feature'```).
+- Push to the branch (```git push origin feature-branch```).
+- Open a pull request.
+
+
+## Features
+
+- Light/dark mode toggle
+- Live Content
+- Problem Selection Form
+- Interactive Whiteboard
+- Many more to come ...
+
+
+## Feedback
+
+If you have any feedback, please reach out to us.
+
+
+## Get the Web App !
+
+Get the deployed version of the app at https://atcb.vercel.app/
+## Lessons Learned
+
+This project was a rapid learning curve. I mastered Next.js fundamentals, web scraping techniques, and deployment workflows. Robust debugging and server management became essential skills. Tailwind CSS and TypeScript solidified my frontend capabilities, improving both efficiency and design. Future exploration of Firebase and authentication will expand upon this now solid foundation.
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/UmarSkh/AtC-Board.git
+```
+
+Go to the project directory
+
+```bash
+  cd my-project
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run dev
+```
+
+[Watch the video](videos/my_video.mp4)
+## Tech Stack
+
+**Frontend:**
+
+* Next.js
+* TypeScript
+* Tailwind CSS
+* Shadcn UI
+* Excalidraw (`@excalidraw/excalidraw`)
+
+**Backend:**
+
+* Node.js
+* Express.js
+* Puppeteer
+* Cheerio
+* CORS (`cors`)
+* Body-parser (`body-parser`)
+
+**Deployment:**
+
+* Render
+
+**Other:**
+
+* npm
+* Zod
+* React Hook Form
