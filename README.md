@@ -27,9 +27,6 @@ Get the deployed version of the app at https://atcb.vercel.app/
 ![Fetching](assets/Screenshots/Fetching.png)
 ![Content](assets/Screenshots/Content.png)
 
-## Demo
-![Demo Video](assets/Videos/AtCBoard-Demo.mp4)
-
 ## Tech Stack
 
 **Frontend:**
