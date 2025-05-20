@@ -15,6 +15,12 @@ Get the deployed version of the app at https://atcb.vercel.app/
   /
 ```
 
+#### Archive
+
+```
+  /archive
+```
+
 #### Whiteboard
 
 ```
@@ -23,9 +29,12 @@ Get the deployed version of the app at https://atcb.vercel.app/
 
 ## Screenshots
 ![Homepage](assets/Screenshots/Homepage.png)
-![Whiteboard](assets/Screenshots/Whiteboard.png)
 ![Fetching](assets/Screenshots/Fetching.png)
 ![Content](assets/Screenshots/Content.png)
+![Signup](assets/Screenshots/Signup.png)
+![Signin](assets/Screenshots/Signin.png)
+![Archive](assets/Screenshots/Archive.png)
+![Whiteboard](assets/Screenshots/Whiteboard.png)
 
 ## Tech Stack
 
@@ -45,6 +54,10 @@ Get the deployed version of the app at https://atcb.vercel.app/
 * Cheerio
 * CORS (`cors`)
 * Body-parser (`body-parser`)
+
+**Database**
+
+* Firebase
 
 **Deployment**
 
@@ -108,7 +121,7 @@ Contributions are always welcome! Feel free to fork the repository and make a pu
 
 ## Lessons Learned
 
-This project was a rapid learning curve. I mastered Next.js fundamentals, web scraping techniques, and deployment workflows. Robust debugging and server management became essential skills. Tailwind CSS and TypeScript solidified my front-end capabilities, improving both efficiency and design. Future exploration of Firebase and authentication will expand upon this now-solid foundation.
+This project was a rapid learning curve. I mastered Next.js fundamentals, web scraping techniques, and deployment workflows, all while utilizing Firebase for its database capabilities and implementing robust authentication. Essential skills like debugging and server management became second nature. My front-end capabilities were solidified by Tailwind CSS, leading to improved efficiency and design, while TypeScript enhanced code quality and maintainability across the project.
 
 ## Feedback
 
