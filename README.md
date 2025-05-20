@@ -27,9 +27,6 @@ Get the deployed version of the app at https://atcb.vercel.app/
 ![Fetching](assets/Screenshots/Fetching.png)
 ![Content](assets/Screenshots/Content.png)
 
-## Demo
-![Demo Video](assets/Videos/AtCBoard-Demo.mp4)
-
 ## Tech Stack
 
 **Frontend:**
@@ -67,27 +64,27 @@ Get the deployed version of the app at https://atcb.vercel.app/
 - Interactive Whiteboard
 - Many more to come ...
 
-- ## Run Locally
+## Run Locally
 
-Clone the project
+Clone the project.
 
 ```bash
-  git clone https://github.com/UmarSkh/AtC-Board.git
+  git clone https://github.com/UmarSkh/AtCBoard.git
 ```
 
-Go to the project directory
+Go to the project directory.
 
 ```bash
   cd my-project
 ```
 
-Install dependencies
+Install dependencies.
 
 ```bash
   npm install
 ```
 
-Start the server
+Start the server.
 
 ```bash
   npm run dev
@@ -115,4 +112,4 @@ This project was a rapid learning curve. I mastered Next.js fundamentals, web sc
 
 ## Feedback
 
-If you have any feedback, please let us know.
+If you have any feedback, please let me know.
