@@ -19,6 +19,8 @@ const Page = () => {
 
   const searchParams = useSearchParams();
 
+  // const {genericpage} = searchParams;
+
   const ctype = searchParams.get("ctype");
   const cid = searchParams.get("cid");
   const ctask = searchParams.get("ctask");
@@ -75,6 +77,9 @@ const Page = () => {
     fetchData();
   }, [dataToSend, fetchData])
 
+
+  const pageTitle: string = `PB - ${searchParams}`;
+
   const [columnWidth, setColumnWidth] = useState<number>(40); // Initial width set to 40%
     const isDragging = useRef<boolean>(false);
 
@@ -129,7 +134,7 @@ const Page = () => {
                 className="h-full w-full"
                 style={{width: `${100 - columnWidth}%`}}
             >
-                <ExcalidrawWrapper />
+                <ExcalidrawWrapper probID={pageTitle}/>
             </div>
         </div>
     </div>

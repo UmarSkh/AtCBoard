@@ -10,11 +10,14 @@ const ExcalidrawWrapper = dynamic(
 )
 
 export default function Page() {
+
+  const pageTitle = "Default";
+
   return(
   <>
     <h1 className="text-center text-2xl py-4">Sketch Your Code.</h1>
     <div style={ {height: "500px"} }>
-      <ExcalidrawWrapper />
+      <ExcalidrawWrapper probID={pageTitle}/>
     </div>
   </>
   );

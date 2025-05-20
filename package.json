@@ -26,6 +26,7 @@
     "dompurify": "^3.2.4",
     "express": "^4.21.2",
     "files": "^3.0.1",
+    "firebase": "^11.7.3",
     "html-react-parser": "^5.2.2",
     "https-proxy-agent": "^7.0.6",
     "jsdom": "^26.0.0",

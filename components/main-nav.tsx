@@ -16,15 +16,17 @@ export function MainNav() {
         </span>
       </Link>
       <nav className="flex items-center gap-4 text-sm xl:gap-6">
-        {/* <Link
-          href="/problems"
-          className={cn(
-            "transition-colors hover:text-foreground/80",
-            pathname === "/problems" ? "text-foreground" : "text-foreground/80"
-          )}
+        <Link
+            href="/archive"
+            className={cn(
+                "transition-colors hover:text-foreground/80",
+                pathname === "/archive"
+                    ? "text-foreground"
+                    : "text-foreground/80"
+            )}
         >
-          Problems
-        </Link> */}
+            Archive
+        </Link>
         <Link
           href="/board"
           className={cn(
