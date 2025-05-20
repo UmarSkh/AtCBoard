@@ -1,7 +1,7 @@
 
 # AtCoder Board
 
-A web app for online whiteboarding for AtCoder Questions.
+AtCoder Board solves the problem of scattered and lost rough work during coding practice. It links each problem with a persistent digital scratchpad, keeping your visual thought process in one place. This maintains a reliable archive of practised problems and simulates the structured problem-solving environment of technical interviews.
 
 ## Get the Web App !
 
